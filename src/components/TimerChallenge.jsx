@@ -4,7 +4,7 @@ import ResultModal from "./ResultModal.jsx";
 export default function TimerChallenge({title, targetTime}) {
     const timer = useRef();
     const dialog = useRef();
-
+    timer.current
     const [timeRemaining, setTimeRemaining] = useState(targetTime*1000);
     const [timeRemainingProp, setTimeRemainingProp] = useState(timeRemaining);
     const timerIsActive = (timeRemaining > 0) && (timeRemaining < targetTime*1000);
@@ -19,6 +19,7 @@ export default function TimerChallenge({title, targetTime}) {
         timer.current = setInterval(() => {
             setTimeRemaining(prevTime => prevTime-10);
             }, 10)
+        setIn
     }
 
     function handleStop(){
